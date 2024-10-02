@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            position: absolute;
+            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: white;
+            padding: 10%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px white;
+            filter: drop-shadow(2px 2px 10px);
+            font-size: xx-large;
+            color: cyan;
+        }
+        body{
+            background: linear-gradient(to right,rgb(158, 151, 158),rgb(29, 41, 67));
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const fruits = ["apple", "banana", "grape"];
+        let ul = document.createElement('ul');
+        const result = fruits.map((element,index)=>{
+            c='';
+           for(i of element){
+                if(i == 'a'){
+                    c += i.match(/a/gi);     
+                }
+                else if (i=='e'){
+                    c += i.match(/e/gi);
+                }
+                else if (i=='i'){
+                    c += i.match(/i/gi);
+                }
+                else if (i=='o'){
+                    c += i.match(/o/gi);
+                }
+                else if (i=='u'){
+                    c += i.match(/u/gi);
+                }
+           }
+           let li = document.createElement('li');
+           li.innerHTML = `${element} (${c.length}vowels)`;
+           ul.appendChild(li);
+           document.body.appendChild(ul);
+        })
+        
+    </script>
+</body>
+</html>

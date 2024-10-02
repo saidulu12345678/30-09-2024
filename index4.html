@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            position: absolute;
+            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: white;
+            padding: 10%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px white;
+            filter: drop-shadow(2px 2px 10px);
+            font-size: xx-large;
+            color: chocolate;
+        }
+        body{
+            background: linear-gradient(to right,rgb(192, 205, 133),rgb(75, 61, 61));
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const animals = ["dog", "cat", "bird", "fish"];
+        const result = animals.map((element,index)=>{
+             return element.split('').reverse().join('');
+        })
+        console.log(result);
+        let ul = document.createElement('ul');
+        for(i of result){
+            let li = document.createElement('li');
+            li.innerHTML = `${i}`;
+            ul.appendChild(li);
+        }
+        document.body.appendChild(ul);
+    </script>
+</body>
+</html>
